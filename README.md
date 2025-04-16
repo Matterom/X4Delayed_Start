@@ -6,21 +6,16 @@ Goals :
   Should the player use a DLC start that put them in one of the locked out sectors, they could run through a version of that area locked out of the core commonwealth for a few hours or so.
 
 Default Unlock Order:
-  - Base Game Patch Gates -
-    
-  Getsu - Void
-  Frontier's Edge - Void
-  
-  Atiya - Frontier
-  
-  Turqoise Sea - Scale
-  
-  Turqoise Sea - Company
-  
 
-  - Split Xenon Gates -
-  - Split Dlc Gates -
+  Base Game Patch Gates   
 
-  - Terran Gates -
-  - Yaki Gates -
-  - Pirate Gates -
+  Split Xenon Gates
+  
+  Split Dlc Gates
+  
+  Terran Gates
+  
+  Yaki Gates
+  
+  Pirate Gates
+  
