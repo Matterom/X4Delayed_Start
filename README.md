@@ -10,9 +10,13 @@ Default Unlock Order:
     
   Getsu - Void
   Frontier's Edge - Void
+  
   Atiya - Frontier
+  
   Turqoise Sea - Scale
+  
   Turqoise Sea - Company
+  
 
   - Split Xenon Gates -
   - Split Dlc Gates -
