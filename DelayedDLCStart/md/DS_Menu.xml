@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="DS_Menu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="L:\SteamLibrary\steamapps\common\X4 Foundations\Loose Files\md\md.xsd">
+ <cues>
+  <cue name="Register_Options_Menu" instantiate="true" namespace="this">
+   <conditions>
+    <event_cue_signalled cue="md.simple_Menu_API.Reloaded"/>
+   </conditions>
+   <actions>
+    <signal_cue_instantly cue="md.Simple_Menu_API.Register_Options_Menu" param = "table[
+	 $id = 'DSMENU',
+	 $columns = 2,
+	 $title = 'Delayed Start Menu',
+	 $onOpen = Build_Options_Menu
+	 ]"/>
+   </actions>
+  </cue>
+ 
+  <cue name="Build_Options_Menu" instantiate="True" namespace="this">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row"/>
+    <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text='Base Game']"/>
+	<signal_cue_instantly cue="md.Simple_Menu_API.Make_Button" param="table[$col=2, $colspan=2, $text='Trigger Gates Now', $active=true, $onclick='md.Delayed_Start_Handler.Trigger_Base_Gates']"/>
+	<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row"/>
+    <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text='Current Time to Trigger: ']"/>
+	<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider" param="table[$col=2, $colspan=2, $active=true, $onSliderCellConfirm='md.Delayed_Start_Handler.Update_Timer_Base']"/>
+	<do_if value="md.Setup_DLC_Split.Setup.exists">
+    <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row"/>
+    <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text='Base Game']"/>
+	<signal_cue_instantly cue="md.Simple_Menu_API.Make_Button" param="table[$col=2, $colspan=2, $text='Trigger Gates Now', $active=true $onclick='md.Delayed_Start_Handler.Trigger_Base_Gates']"/>
+	<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row"/>
+    <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text='Current Time to Trigger: ']"/>
+	<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider" param="table[$col=2, $colspan=2, $active=true, $onSliderCellConfirm='md.Delayed_Start_Handler.Update_Timer_Base']"/>
+	</do_if>
+
+   </actions>
+  </cue>
+ </cues>
+</mdscript>

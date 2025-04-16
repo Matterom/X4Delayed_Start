@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+ <!-- Terran DLC Gates -->
+ <!-- Savage Spur -> Matrix #79B DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone002_Cluster_112_Sector001_macro']/connections">
+  <connections>
+   <connection name="connection_ClusterGate112To033" ref="gates">
+    <offset>
+     <position x="25938.080078125" y="0" z="22836.10546875" />
+     <quaternion qx="0" qy="-0.8870107532" qz="0" qw="0.4617487192" />
+    </offset>
+    <macro ref="props_gates_anc_gate_macro" connection="space">
+     <properties>
+      <state active="false" />
+     </properties>
+    </macro>
+   </connection>
+   <connection name="connection_ClusterGate112To112A" ref="gates">
+    <offset>
+     <position x="25938.080078125" y="0" z="22836.10546875" />
+     <quaternion qx="0" qy="-0.8870107532" qz="0" qw="0.4617487192" />
+    </offset>
+    <macro ref="props_gates_anc_gate_macro" connection="space" />
+   </connection>
+  </connections>
+ </replace>
+
+ <!-- Savage Spur -> Getsu Fune DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone002_Cluster_112_Sector002_macro']/connections">
+  <connections>
+   <connection name="connection_ClusterGate112To048" ref="gates">
+    <offset>
+     <position x="-24473.83203125" y="0" z="-12566.40625" />
+     <quaternion qx="0" qy="0.537299633" qz="0" qw="0.8433914185" />
+    </offset>
+   <macro ref="props_gates_anc_gate_macro" connection="space">
+    <properties>
+     <state active="false" />
+    </properties>
+   </macro>
+   </connection>
+   <connection name="connection_ClusterGate112To0112B" ref="gates">
+    <offset>
+     <position x="-24473.83203125" y="0" z="-12566.40625" />
+     <quaternion qx="0" qy="0.537299633" qz="0" qw="0.8433914185" />
+    </offset>
+    <macro ref="props_gates_anc_gate_macro" connection="space" />
+   </connection>
+  </connections>
+ </replace>
+ 
+ <!-- Asteroid Belt -> Getsu Fune DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_100_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Segaris -> Antigone Memorial DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone005_Cluster_113_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+
+</diff>

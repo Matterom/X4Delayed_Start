@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+ <!-- Split Xenon Gates -->
+ <!-- Emperors Pride <-> Litany of Fury Gates -->
+ <replace sel="//macros/macro[@name='Zone001_Cluster_423_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ <replace sel="//macros/macro[@name='Zone005_Cluster_424_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Rhy's Defiance <-> Family Kritt Gates -->
+ <replace sel="//macros/macro[@name='Zone002_Cluster_402_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ <replace sel="//macros/macro[@name='Zone005_Cluster_414_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Matrix #598 <-> Zyarth's Dominion Gates -->
+ <replace sel="//macros/macro[@name='Zone001_Cluster_404_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ <replace sel="//macros/macro[@name='Zone004_Cluster_415_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Tharka's Ravine Xenon Gates -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_412_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_orb_accelerator_01_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ <replace sel="//macros/macro[@name='Zone001_Cluster_413_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_orb_accelerator_01_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+
+ <!-- Split Argon Gates -->
+ <!-- Eleventh Hour <-> Zyarth's Dominion DLC Gates -->
+ <replace sel="//macros/macro[@name='Zone003_Cluster_406_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_orb_accelerator_01_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ <replace sel="//macros/macro[@name='Zone001_Cluster_417_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_orb_accelerator_01_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+
+ <!-- DLC Gates -->
+ <!-- Wretched Skies DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone005_Cluster_403_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Family Zhin DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone005_Cluster_401_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Two Grand  DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone005_Cluster_420_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Fires of Defeat DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone002_Cluster_421_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Family Tkr DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_407_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Thuruk's Demise DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_408_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+</diff>

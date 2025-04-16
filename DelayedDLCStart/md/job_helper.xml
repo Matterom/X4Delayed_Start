@@ -1,0 +1,8 @@
+<!--?xml version="1.0" encoding="utf-8"?>
+<diff>
+ <replace sel="//mdscript[@name='Job_Helper']/cues/library[@name='Manager']/cues/cue[@name='Process_Ships']/actions/do_if[@value='$Shipyards.count']/do_all[@exact='$ShipsToBuild.count']/do_all[@exact='$Shipyards.count']/do_if[@value='$ShipyardTable.{$Shipyard}.$BuildableShipWares.indexof.{$ShipToBuild.macro.ware}']/do_if[@value='$HasSuitableBuildModule']/do_else[1]">
+  <do_if value="$ShipyardTable.{$Shipyard}.$DistanceTable.{$JobCluster}?">
+    <set_value name="$ShipyardDistanceTable.{$Shipyard}" exact="$JumpCheckRange + 1"/>
+  </do_if>
+ </replace>
+</diff-->

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+ <!-- Vanilla Gates -->
+ <!-- Void <-> Frontier's Edge Gates -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_27_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ <replace sel="//macros/macro[@name='Zone003_Cluster_49_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Atiya's Missfortune <-> Frontier's Edge Gate -->
+ <replace sel="//macros/macro[@name='Zone001_Cluster_49_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ <replace sel="//macros/macro[@name='Zone004_Cluster_26_Sector001_macro']/connections/connection[@name='connection_ClusterGate026To049']/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Getsune_Fune <-> Void Gates -->
+ <replace sel="//macros/macro[@name='Zone003_Cluster_48_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace> 
+ <replace sel="//macros/macro[@name='Zone005_Cluster_27_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+
+ <!-- Turquoise Sea <-> Company Regard -->
+ <replace sel="//macros/macro[@name='Zone001_Cluster_50_Sector002_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace> 
+ <replace sel="//macros/macro[@name='Zone002_Cluster_20_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+
+ <!-- Turquoise Sea <-> Scale Plate Green -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_50_Sector002_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace> 
+ <replace sel="//macros/macro[@name='Zone003_Cluster_21_Sector002_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+
+
+ <!-- Split DLC Gates -->
+ <!-- Heretics End -> Wretched Skies DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone002_Cluster_31_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+
+ <!-- Tharkas Cascade -> Family Zhin DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone003_Cluster_32_Sector001_macro']/connections/connection[@name='connection_ClusterGate032To401']/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Profit Center Alpha -> Two Grand  DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_34_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+
+ <!-- Matrix #9 -> Fires of Defeat DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_17_Sector001_macro']/connections/connection[@name='connection_ClusterGate017To421']/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+
+ <!-- Matrix #451 -> Family Tkr DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone003_Cluster_16_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+
+ <!-- Ianamus Zura -> Thuruk's Demise DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone001_Cluster_15_Sector002_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Terran DLC Gates -->
+ <!-- Getsu Fune -> Asteroid Belt DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone001_Cluster_48_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Getsu Fune -> Savage Spur DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_48_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Antigone Memorial -> Segaris Gate -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_28_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Matrix #79B -> Savage Spur DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone003_Cluster_33_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Avarice DLC Gates -->
+ <!-- Silent Witness -> Windfall DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone006_Cluster_08_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Eighteen Billion -> Windfall DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_02_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Black Hole Sun -> Windfall DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_06_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+</diff>

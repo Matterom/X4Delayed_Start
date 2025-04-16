@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+ <replace sel="//macros/macro[@name='Cluster_112_macro']/connections/connection[@name='SuperHighway01_Cluster112_connection']/macro[@ref='SuperHighway01_Cluster112_macro']/connections">
+  <connections>
+   <connection ref="entrypoint">
+    <macro ref="tzoneCluster_112_Sector001SHCon6_GateZone_macro" path="../../Cluster_112_Sector001_connection/tzoneCluster_112_Sector001SHCon6_GateZone_connection" connection="exitpoint1" >
+	 <state active="false"/>
+	</macro>
+   </connection>
+   <connection ref="exitpoint">
+    <macro ref="tzoneCluster_112_Sector002SHCon5_GateZone_macro" path="../../Cluster_112_Sector002_connection/tzoneCluster_112_Sector002SHCon5_GateZone_connection" connection="entrypoint1" >
+	 <state active="false"/>
+	</macro>
+   </connection>
+  </connections>
+ </replace>
+</diff>

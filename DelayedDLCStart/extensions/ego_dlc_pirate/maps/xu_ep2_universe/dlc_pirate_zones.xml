@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+ <!-- DLC Gates -->
+ <!-- Windfall -> Silent Witness DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone002_Cluster_501_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Windfall -> Eighteen Billion DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone004_Cluster_501_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+ 
+ <!-- Windfall -> Black Hole Sun  DLC Gate -->
+ <replace sel="//macros/macro[@name='Zone005_Cluster_503_Sector001_macro']/connections/connection/macro">
+  <macro ref="props_gates_anc_gate_macro" connection="space">
+   <properties>
+    <state active="false" />
+   </properties>
+  </macro>
+ </replace>
+</diff>

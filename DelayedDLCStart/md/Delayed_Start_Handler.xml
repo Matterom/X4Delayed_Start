@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mdscript name="Delayed_Start_Handler" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="L:\SteamLibrary\steamapps\common\X4 Foundations\Loose Files\md\md.xsd">
+ <cues>
+ <!--
+ List all changed gates
+ Sort into the following Lists
+  - 3.0 Gates
+  - Split Gates
+  - Terran Gates
+    - in case of Savage Spur, disable and delete temp gate
+  - Avarice Gates
+  
+  Once Mean time for group activates. roll gate activation every 10-30m until all gates set to active
+  when finished start timer for next group
+  
+  Announce to player this occured
+  
+  if player finds their way into a relevant cluster, move that area to front of list
+
+  if i or anyone wants to make a menu for it.
+  
+  change mean time for each node.
+  change order
+
+ -->
+  <cue name="Delay_DLC_Init" namespace="this">
+   <conditions>
+    <event_cue_signalled cue="md.Setup.Start"/>
+   </conditions>
+   <actions>
+
+    <!--find_sector name="$SplitSectors" multiple="true" />
+    <find_sector name="$TerranSectors"  multiple="true" />
+    <find_sector name="$PirateSectors"  multiple="true" /-->
+    <!--find_sector name="$BoronSectors"  multiple="true" extension="'ego_dlc_boron'"/-->
+
+	<create_list name="$BaseGateList" exact="[
+	'Trigger_Gate_Void2Getsu',
+	'Trigger_Gate_Void2Frontier',
+	'Trigger_Gate_Atiya2Frontier',
+	'Trigger_Gate_Comp2Turq',
+	'Trigger_Gate_Scale2Turq'
+	]"/>
+	<create_list name="$SplitGateList" exact="[
+	'Trigger_Gate_Here2Wretch',
+	'Trigger_Gate_Thark2Zhin',
+	'Trigger_Gate_Profit2Grand',
+	'Trigger_Gate_Mat92Fires',
+	'Trigger_Gate_Mat4512Tkr',
+	'Trigger_Gate_Zura2Thuruk',
+	'Trigger_Gate_Pride2Fury',
+	'Trigger_Gate_Rhy2Krit',
+	'Trigger_Gate_Thar2TharX',
+	'Trigger_Gate_Zyar2Eleven'
+	]"/>
+	<create_list name="$TerranGateList" exact="[
+	'Trigger_Gate_Getsu2Asteroid',
+	'Trigger_Gate_Getsu2Spur',
+	'Trigger_Gate_Ant2Segaris',
+	'Trigger_Gate_Mat79B2Spur'
+	]"/>
+	<create_list name="$PirateGateList" exact="[
+	'Trigger_Gate_Silent2Wind',
+	'Trigger_Gate_Eighteen2Wind',
+	'Trigger_Gate_Black2Wind'
+	]"/>
+	
+	<!--signal_cue_instantly cue="Trigger_All_Gates"/-->
+	<!--signal_cue_instantly cue="Starting_Gates" param="$SplitGateList" param2="DelayedSplitStarted"/>
+	<signal_cue_instantly cue="Starting_Gates" param="$TerranGateList" param2="DelayedTerranStarted"/>
+    <signal_cue_instantly cue="Starting_Gates" param="$PirateGateList" param2="DelayedPirateStarted"/-->
+   </actions>
+  </cue>
+
+  <!--cue name="Starting_Gates">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+   <!-Get $XGateList Fix later->
+   <do_while value="$event.param.{1}?">
+    <!-Select Random Item from List->
+	<!-set_value value="$GateSet" exact="$event.param.random"/->
+	<!-Announce to the player that something is happening, if the gate has been seen->
+	<!->
+	<!-show_notification text="'Something is happening to a nearby gate'" sound="" comment=""/>
+	<delay min="1m" max="2m"/->
+	<!-Announce the gate opend->
+	<!-signal_cue_instantly cue="$GateSet"/->
+	<!-Remove Gate Set from list->
+	<!-remove_from_list name="$event.param" value="$GateSet"/>
+	<delay min="2m" max="5m"/>
+   </do_while->
+   <!-Set Global Acknowledgment Variable to enable story cues->
+   <!-set_value value="$global.$event.param2"/>
+   </actions->
+  </cue-->
+
+  <cue name="Trigger_All_Gates">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <signal_cue_instantly cue="Trigger_Base_Gates"/>
+    <signal_cue_instantly cue="Trigger_Split_Gates"/>
+    <signal_cue_instantly cue="Trigger_Terran_Gates"/>
+    <signal_cue_instantly cue="Trigger_Pirate_Gates"/>
+   </actions>
+  </cue>
+  <cue name="Trigger_Base_Gates">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <signal_cue_instantly cue="Trigger_Gate_Void2Getsu"/>
+    <signal_cue_instantly cue="Trigger_Gate_Void2Frontier"/>
+	<signal_cue_instantly cue="Trigger_Gate_Atiya2Frontier"/>
+    <signal_cue_instantly cue="Trigger_Gate_Comp2Turq"/>
+	<signal_cue_instantly cue="Trigger_Gate_Scale2Turq"/>
+   </actions>
+  </cue>
+  <cue name="Trigger_Split_Gates">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <signal_cue_instantly cue="Trigger_Gate_Here2Wretch"/>
+	<signal_cue_instantly cue="Trigger_Gate_Thark2Zhin"/>
+    <signal_cue_instantly cue="Trigger_Gate_Profit2Grand"/>
+	<signal_cue_instantly cue="Trigger_Gate_Mat92Fires"/>
+    <signal_cue_instantly cue="Trigger_Gate_Mat4512Tkr"/>
+	<signal_cue_instantly cue="Trigger_Gate_Zura2Thuruk"/>
+    <signal_cue_instantly cue="Trigger_Gate_Pride2Fury"/>
+	<signal_cue_instantly cue="Trigger_Gate_Rhy2Krit"/>
+    <signal_cue_instantly cue="Trigger_Gate_Thar2TharX"/>
+	<signal_cue_instantly cue="Trigger_Gate_Zyar2Eleven"/>
+   </actions>
+  </cue>
+  <cue name="Trigger_Terran_Gates">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <signal_cue_instantly cue="Trigger_Gate_Getsu2Asteroid"/>
+	<signal_cue_instantly cue="Trigger_Gate_Getsu2Spur"/>
+    <signal_cue_instantly cue="Trigger_Gate_Ant2Segaris"/>
+	<signal_cue_instantly cue="Trigger_Gate_Mat79B2Spur"/>
+   </actions>
+  </cue>
+  <cue name="Trigger_Pirate_Gates">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <signal_cue_instantly cue="Trigger_Gate_Silent2Wind"/>
+	<signal_cue_instantly cue="Trigger_Gate_Eighteen2Wind"/>
+    <signal_cue_instantly cue="Trigger_Gate_Black2Wind"/>
+   </actions>
+  </cue>
+
+  <cue name="Trigger_Gate_Void2Frontier">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$BG_Void2Frontier" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone004_Cluster_27_Sector001_macro]" />
+	  <match macro="[macro.Zone003_Cluster_49_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$BGZone" in="$BG_Void2Frontier">
+	 <find_gate name="$BGGate" active="false" append="true" space="$BGZone"/>
+	</do_for_each>
+	<do_for_each name="$BGGate" in="$BGGate">
+	 <set_object_active object="$BGGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+
+  <cue name="Trigger_Gate_Void2Getsu">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$BG_Void2Getsu" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone003_Cluster_48_Sector001_macro]" />
+	  <match macro="[macro.Zone005_Cluster_27_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$BGZone" in="$BG_Void2Getsu">
+	 <find_gate name="$BGGate" active="false" append="true" space="$BGZone"/>
+	 <set_object_active object="$BGGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+  
+  <cue name="Trigger_Gate_Atiya2Frontier">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$BG_Atiya2Frontier" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone001_Cluster_49_Sector001_macro]" />
+	  <match macro="[macro.Zone004_Cluster_26_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$BGZone" in="$BG_Atiya2Frontier">
+	 <find_gate name="$BGGate" active="false" append="true" space="$BGZone"/>
+	 <set_object_active object="$BGGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+  
+  <cue name="Trigger_Gate_Comp2Turq">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$BG_Comp2Turq" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone001_Cluster_50_Sector002_macro]" />
+	  <match macro="[macro.Zone002_Cluster_20_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$BGZone" in="$BG_Comp2Turq">
+	 <find_gate name="$BGGate" active="false" append="true" space="$BGZone"/>
+	 <set_object_active object="$BGGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+  
+  <cue name="Trigger_Gate_Scale2Turq">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$BG_Scale2Turq" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone004_Cluster_50_Sector002_macro]" />
+	  <match macro="[macro.Zone003_Cluster_21_Sector002_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$BGZone" in="$BG_Scale2Turq">
+	 <find_gate name="$BGGate" active="false" append="true" space="$BGZone"/>
+	 <set_object_active object="$BGGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+
+  <!--Split DLC-->
+  <cue name="Trigger_Gate_Here2Wretch">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$S_Here2Wretch" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone002_Cluster_31_Sector001_macro]" />
+	  <match macro="[macro.Zone005_Cluster_403_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$SZone" in="$S_Here2Wretch">
+	 <find_gate name="$SGate" active="false" append="true" space="$SZone"/>
+	 <set_object_active object="$SGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+  
+  <cue name="Trigger_Gate_Thark2Zhin">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$S_Thark2Zhin" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone003_Cluster_32_Sector001_macro]" />
+	  <match macro="[macro.Zone005_Cluster_401_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$SZone" in="$S_Thark2Zhin">
+	 <find_gate name="$SGGates" active="false" append="true" space="$SZone"/>
+	 <set_object_active object="$SGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+  
+  <cue name="Trigger_Gate_Profit2Grand">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$S_Profit2Grand" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone004_Cluster_34_Sector001_macro]" />
+	  <match macro="[macro.Zone005_Cluster_420_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$SZone" in="$S_Profit2Grand">
+	 <find_gate name="$SGate" active="false" append="true" space="$SZone"/>
+	 <set_object_active object="$SGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+
+  <cue name="Trigger_Gate_Mat92Fires">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$S_Mat92Fires" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone004_Cluster_17_Sector001_macro]" />
+	  <match macro="[macro.Zone002_Cluster_421_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$SZone" in="$S_Mat92Fires">
+	 <find_gate name="$SGate" active="false" append="true" space="$SZone"/>
+	 <set_object_active object="$SGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+
+  <cue name="Trigger_Gate_Mat4512Tkr">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$S_Mat4512Tkr" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone003_Cluster_16_Sector001_macro]" />
+	  <match macro="[macro.Zone004_Cluster_407_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$SZone" in="$S_Mat4512Tkr">
+	 <find_gate name="$SGate" active="false" append="true" space="$SZone"/>
+	 <set_object_active object="$SGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+
+  <cue name="Trigger_Gate_Zura2Thuruk">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$S_Zura2Thuruk" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone001_Cluster_15_Sector002_macro]" />
+	  <match macro="[macro.Zone004_Cluster_408_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$SZone" in="$S_Zura2Thuruk">
+	 <find_gate name="$SGate" active="false" append="true" space="$SZone"/>
+	 <set_object_active object="$SGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+ 
+  <cue name="Trigger_Gate_Pride2Fury">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$S_Pride2Fury" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone001_Cluster_423_Sector001_macro]" />
+	  <match macro="[macro.Zone005_Cluster_424_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$SZone" in="$S_Pride2Fury">
+	 <find_gate name="$SGate" active="false" append="true" space="$SZone"/>
+	 <set_object_active object="$SGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+
+  <cue name="Trigger_Gate_Rhy2Krit">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$S_Rhy2Krit" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone002_Cluster_402_Sector001_macro]" />
+	  <match macro="[macro.Zone005_Cluster_414_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$SZone" in="$S_Rhy2Krit">
+	 <find_gate name="$SGate" active="false" append="true" space="$SZone"/>
+	 <set_object_active object="$SGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+
+  <cue name="Trigger_Gate_Mat5982Zyar">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$S_Mat5982Zyar" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone003_Cluster_48_Sector001_macro]" />
+	  <match macro="[macro.Zone005_Cluster_27_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$SZone" in="$S_Mat5982Zyar">
+	 <find_gate name="$SGate" active="false" append="true" space="$SZone"/>
+	 <set_object_active object="$SGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+
+  <cue name="Trigger_Gate_Thar2TharX">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$S_Thar2TharX" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone004_Cluster_412_Sector001_macro]" />
+	  <match macro="[macro.Zone001_Cluster_413_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$SZone" in="$S_Thar2TharX">
+	 <find_gate name="$SGate" active="false" append="true" space="$SZone"/>
+	 <set_object_active object="$SGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+
+  <cue name="Trigger_Gate_Zyar2Eleven">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$S_Zyar2Eleven" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone003_Cluster_406_Sector001_macro]" />
+	  <match macro="[macro.Zone001_Cluster_417_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$SZone" in="$S_Zyar2Eleven">
+	 <find_gate name="$SGate" active="false" append="true" space="$SZone"/>
+	 <set_object_active object="$SGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+
+  <!--Terran DLC-->
+  <cue name="Trigger_Gate_Getsu2Asteroid">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$T_Getsu2Asteroid" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone001_Cluster_48_Sector001_macro]" />
+	  <match macro="[macro.Zone004_Cluster_100_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$TZone" in="$T_Getsu2Asteroid">
+	 <find_gate name="$TGate" active="false" append="true" space="$TZone"/>
+	</do_for_each>
+	<set_object_active object="$TGate.{1}" activate="true"/>
+	<set_object_active object="$TGate.{2}" activate="true"/>
+   </actions>
+  </cue>
+
+  <cue name="Trigger_Gate_Getsu2Spur">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$T_Getsu2Spur" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone004_Cluster_48_Sector001_macro]" />
+	  <match macro="[macro.Zone002_Cluster_112_Sector002_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$TZone" in="$T_Getsu2Spur">
+	 <find_gate name="$TGate" active="false" append="true" space="$TZone"/>
+	 <find_gate name="$TGate2D" active="true" space="$TZone"/>
+     <set_object_active object="$TGate" activate="true"/>
+	</do_for_each>
+	<set_object_active object="$TGate2D" activate="false"/>
+	<destroy_object object="$TGate2D"/>
+   </actions>
+  </cue>
+
+  <cue name="Trigger_Gate_Ant2Segaris">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$T_Ant2Segaris" multiple="true">
+	 <match_any>
+	  <match macro="[macro.Zone004_Cluster_28_Sector001_macro]" />
+	  <match macro="[macro.Zone005_Cluster_113_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$TZone" in="$T_Ant2Segaris">
+	 <find_gate name="$TGate" active="false" append="true" space="$TZone"/>
+	 <set_object_active object="$TGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+  
+  <cue name="Trigger_Gate_Mat79B2Spur">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$T_Mat79B2Spur" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone003_Cluster_33_Sector001_macro]" />
+	  <match macro="[macro.Zone002_Cluster_112_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$TZone" in="$T_Mat79B2Spur">
+	 <find_gate name="$TGate" active="false" append="true" space="$TZone"/>
+	 <find_gate name="$TGate2D" active="true" space="$TZone"/>
+     <set_object_active object="$TGate" activate="true"/>
+	</do_for_each>
+	<set_object_active object="$TGate2D" activate="false"/>
+	<destroy_object object="$TGate2D"/>
+   </actions>
+  </cue>
+ 
+  <!--Pirate DLC-->
+  <cue name="Trigger_Gate_Silent2Wind">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$P_Silent2Wind" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone006_Cluster_08_Sector001_macro]" />
+	  <match macro="[macro.Zone002_Cluster_501_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$PZone" in="$P_Silent2Wind">
+	 <find_gate name="$PGate" active="false" append="true" space="$PZone"/>
+	 <set_object_active object="$PGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+  
+  <cue name="Trigger_Gate_Eighteen2Wind">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$P_Eighteen2Wind" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone004_Cluster_02_Sector001_macro]" />
+	  <match macro="[macro.Zone004_Cluster_501_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$PZone" in="$P_Eighteen2Wind">
+	 <find_gate name="$PGate" active="false" append="true" space="$PZone"/>
+	 <set_object_active object="$PGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+
+  <cue name="Trigger_Gate_Black2Wind">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$P_Black2Wind" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone004_Cluster_06_Sector001_macro]" />
+	  <match macro="[macro.Zone005_Cluster_503_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$PZone" in="$P_Black2Wind">
+	 <find_gate name="$PGate" active="false" append="true" space="$PZone"/>
+	 <set_object_active object="$PGate" activate="true"/>
+	</do_for_each>
+   </actions>
+  </cue>
+
+  <!--Boron DLC-->
+  <!--cue name="Trigger_Gate_">
+   <conditions>
+    <event_cue_signalled/>
+   </conditions>
+   <actions>
+    <find_zone name="$B_" multiple="true" >
+	 <match_any>
+	  <match macro="[macro.Zone003_Cluster_48_Sector001_macro]" />
+	  <match macro="[macro.Zone005_Cluster_27_Sector001_macro]" />
+	 </match_any>
+	</find_zone>
+	<do_for_each name="$BZone" in="$B_">
+	 <find_gate name="$BGates" multiple="true" active="false" append="true" space="$BZone"/>
+	</do_for_each>
+	<set_object_active object="$BGates.{1}" activate="true"/>
+	<set_object_active object="$BGates.{2}" activate="true"/>
+   </actions>
+  </cue-->
+  
+
+  <library name="DLC_Timer_Library">
+   <params>
+    <param name="$delay_timer" default="5m"/>
+	<param name="$delay_variance" />
+   </params>
+   <cues>
+    <cue name="Delay_DLC_Timer" namespace="this">
+     <set_value name="$delay" min="4m" max="6m"/>
+     <delay exact="$delay"/>
+    </cue>
+   </cues>
+  </library>
+ </cues>
+</mdscript>
